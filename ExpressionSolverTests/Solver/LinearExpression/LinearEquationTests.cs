@@ -56,5 +56,14 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression.Tests
             Assert.AreEqual(0.54f, eqn["yz"]);
             Assert.AreEqual(-10.5, eqn["equals"]);
         }
+
+        [TestMethod()]
+        public void LinearEquationInteligenceTest()
+        {
+            LinearEquation eqn = new LinearEquation("-3.25xy+0.54yz+0.25xy=-10.5");
+            Assert.AreEqual(-3.00f, eqn["xy"]);
+            Assert.AreEqual(0.54f, eqn["yz"]);
+            Assert.AreEqual(-10.5, eqn["equals"]);
+        }
     }
 }
