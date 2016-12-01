@@ -69,7 +69,7 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression
                         weight = float.Parse(match);
                     }
 
-                    //Put it to Dictionary
+                    //Put it to Dictionary  
                     if (!variablesWeightsDict.ContainsKey(variableName))
                         variablesWeightsDict.Add(variableName, weight);
                     else
