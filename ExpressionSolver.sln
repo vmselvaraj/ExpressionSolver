@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionSolver", "Express
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "TestApplication\TestApplication.csproj", "{F461982B-E432-4D16-B1A4-99FCCAEC3408}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionSolverTest", "ExpressionSolverTest\ExpressionSolverTest.csproj", "{8D3F707F-A679-4EEE-ACFD-30CCF895E72D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionSolverTests", "ExpressionSolverTests\ExpressionSolverTests.csproj", "{2C5F53C9-6476-45DD-9AB2-2DD560A94C2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F461982B-E432-4D16-B1A4-99FCCAEC3408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F461982B-E432-4D16-B1A4-99FCCAEC3408}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F461982B-E432-4D16-B1A4-99FCCAEC3408}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D3F707F-A679-4EEE-ACFD-30CCF895E72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D3F707F-A679-4EEE-ACFD-30CCF895E72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D3F707F-A679-4EEE-ACFD-30CCF895E72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D3F707F-A679-4EEE-ACFD-30CCF895E72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5F53C9-6476-45DD-9AB2-2DD560A94C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5F53C9-6476-45DD-9AB2-2DD560A94C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5F53C9-6476-45DD-9AB2-2DD560A94C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5F53C9-6476-45DD-9AB2-2DD560A94C2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

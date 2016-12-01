@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Beyond.ExpressionSolver
 {
-    public class ExpressionSolver
+    public class NumericExpression
     {
-        public ExpressionSolver()
+        public NumericExpression()
         {
 
         }
