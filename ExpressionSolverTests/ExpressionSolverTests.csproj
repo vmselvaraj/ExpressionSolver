@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solver\LinearExpression\LinearEquationSolverTests.cs" />
     <Compile Include="Solver\LinearExpression\LinearEquationTests.cs" />
+    <Compile Include="Solver\NumericExpression\NumericExpressionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExpressionSolver\ExpressionSolver.csproj">
