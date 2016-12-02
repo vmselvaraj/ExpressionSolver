@@ -22,30 +22,35 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression
             }
         }
 
-        private Dictionary<string, float> variablesWeightsDict = null;
+        private Dictionary<string, float> variablesCoefficientDict = null;
         public float this[string variableName]
         {
             get
             {
-                if(variablesWeightsDict.ContainsKey(variableName))
-                    return variablesWeightsDict[variableName];
+                if(variablesCoefficientDict.ContainsKey(variableName))
+                    return variablesCoefficientDict[variableName];
 
                 return 0;
             }
         }
         
+        public int TotalNumberOfVariables
+        {
+            get
+            {
+                return variablesCoefficientDict.Count();
+            }
+        }
 
-        private const string equationPattern = @"([-]?([0-9]*\.[0-9]+|[0-9]+)|[a-zA-Z]+|=)";
+        private const string equationPattern = @"([+-]?([0-9]*\.[0-9]+|[0-9]+)|[+-]|[a-zA-Z]+|=)";
         public LinearEquation(string equation)
         {
             Equation = equation;
-            variablesWeightsDict = new Dictionary<string, float>();
-            PopulateVariablesWeightDict();
-            
+            variablesCoefficientDict = new Dictionary<string, float>();
+            ParseEquation();
         }
 
-
-        private void PopulateVariablesWeightDict()
+        public void ParseEquation()
         {
             try
             {
@@ -58,22 +63,26 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression
                     //Get the Variable Name
                     string variableName = matches[i + 1].Value;
 
-                    float weight = 1;
+                    float coefficient = 1;
                     if(match == "=")
                     {
                         variableName = "equals";
-                        weight = float.Parse(matches[i + 1].Value);
+                        coefficient = float.Parse(matches[i + 1].Value);
                     }
                     else if(match != "-" && match !="+")
                     {
-                        weight = float.Parse(match);
+                        coefficient = float.Parse(match);
+                    }
+                    else if(match == "-")
+                    {
+                        coefficient = -1;
                     }
 
                     //Put it to Dictionary  
-                    if (!variablesWeightsDict.ContainsKey(variableName))
-                        variablesWeightsDict.Add(variableName, weight);
+                    if (!variablesCoefficientDict.ContainsKey(variableName))
+                        variablesCoefficientDict.Add(variableName, coefficient);
                     else
-                        variablesWeightsDict[variableName] += weight;
+                        variablesCoefficientDict[variableName] += coefficient;
                 }
             }
             catch(Exception e)
@@ -81,6 +90,27 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression
                 throw new InvalidLinearEquation("Invalid Linear Equation: " + Equation);
             }
            
+        }
+
+        public void PopulateVariableList(List<string> variablesList)
+        {
+            foreach(var variableName in variablesCoefficientDict.Keys)
+            {
+                if(!variablesList.Contains(variableName))
+                {
+                    variablesList.Add(variableName);
+                }
+            }
+        }
+
+        public bool ValidatePresenceOfVariablesInTheList(List<string> masterVariableList)
+        {
+            foreach(var variable in variablesCoefficientDict.Keys)
+            {
+                if (!masterVariableList.Contains(variable))
+                    return false;
+            }
+            return true;
         }
     }
 }

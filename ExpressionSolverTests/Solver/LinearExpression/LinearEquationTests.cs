@@ -38,6 +38,15 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression.Tests
             Assert.AreEqual(4, eqn["yz"]);
             Assert.AreEqual(10, eqn["equals"]);
         }
+        [TestMethod()]
+        public void LinearEquationMoreVariableTest()
+        {
+            LinearEquation eqn = new LinearEquation("-3x+4y-z=10");
+            Assert.AreEqual(-3, eqn["x"]);
+            Assert.AreEqual(4, eqn["y"]);
+            Assert.AreEqual(-1, eqn["z"]);
+            Assert.AreEqual(10, eqn["equals"]);
+        }
 
         [TestMethod()]
         public void LinearEquationNegativeEqualsTest()
@@ -65,5 +74,6 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression.Tests
             Assert.AreEqual(0.54f, eqn["yz"]);
             Assert.AreEqual(-10.5, eqn["equals"]);
         }
+
     }
 }
