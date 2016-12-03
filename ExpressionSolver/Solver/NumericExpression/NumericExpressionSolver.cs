@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Beyond.ExpressionSolver
 {
-    public static class NumericExpression
+    public class NumericExpression
     {
         private static bool IsNumeric(string s, out double Number)
         {
@@ -51,7 +51,7 @@ namespace Beyond.ExpressionSolver
             return 0;
         }
 
-        public static double Evaluate(string text)
+        public static  double Solve(string text)
         {
             if (text.StartsWith("-") || text.StartsWith("+"))
                 text = "0" + text;

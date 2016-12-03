@@ -7,7 +7,7 @@ using System.Drawing.Drawing2D;
 
 namespace Beyond.ExpressionSolver.Solver.LinearExpression
 {
-    public class LinearEquationSolver
+    public class LinearEquationSolver : IExpressionSolver
     {
         public List<LinearEquation> Equations { get; set; }
         public List<LinearEquationAnswer> Answers { get; set; }
@@ -48,7 +48,7 @@ namespace Beyond.ExpressionSolver.Solver.LinearExpression
                 }
             }
 
-            //Solve it by Gauss Elimincation Method
+            //Solve it by Gaussian Elimination Method
 
             return ToString();
         }
